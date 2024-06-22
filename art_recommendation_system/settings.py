@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-jir0u*493=u(bo0jyu1tba4o=y)w0f3c!+1(2ha4piy!ju-9)b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'art-reccommendation-api.onrender.com']
 
 
 # Application definition
