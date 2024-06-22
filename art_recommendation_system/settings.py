@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -82,19 +83,23 @@ WSGI_APPLICATION = 'art_recommendation_system.wsgi.application'
 # Add these at the top of your settings.py
 
 # Replace the DATABASES section of your settings.py with this
+#DATABASES = {
+ # 'default': {
+  #  'ENGINE': 'django.db.backends.postgresql',
+   # 'NAME': 'sallah_db',
+    #'USER': 'sallah_db_owner',
+    #'PASSWORD': '8e4ljTkzYOpN',
+    #'HOST': 'ep-raspy-firefly-a46alvr7.us-east-1.aws.neon.tech',
+    #'PORT': 5432,
+    #'OPTIONS': {
+    #  'sslmode': 'require',
+    #},
+  #}
+#}
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'sallah_db',
-    'USER': 'sallah_db_owner',
-    'PASSWORD': '8e4ljTkzYOpN',
-    'HOST': 'ep-raspy-firefly-a46alvr7.us-east-1.aws.neon.tech',
-    'PORT': 5432,
-    'OPTIONS': {
-      'sslmode': 'require',
-    },
-  }
-}
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
