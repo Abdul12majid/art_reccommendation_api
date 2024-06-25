@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Art_Work(models.Model):
@@ -10,3 +11,12 @@ class Art_Work(models.Model):
 	def __str__(self):
 		return f'{self.artiste} {self.art_title}'
 
+
+
+class UserInteraction(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    artwork = models.ForeignKey(Art_Work, on_delete=models.CASCADE)
+    liked = models.BooleanField(default=False)
+    bookmarked = models.BooleanField(default=False)
+    view_count = models.IntegerField(default=0)
+    last_interacted = models.DateTimeField(auto_now=True)
