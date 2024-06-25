@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
-import cloudinary
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
+    
     'gallery_app',
-    'cloudinary',
+    
     'corsheaders',
     'rest_framework',
 ]
@@ -60,11 +60,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dhwv5vpgo',
-    'API_KEY': '196239594764189',
-    'API_SECRET': 'Eczo8yPNWhhUpPDDfOIaxewz8UE'
-}
+#CLOUDINARY_STORAGE = {
+ #   'CLOUD_NAME': 'dhwv5vpgo',
+  #  'API_KEY': '196239594764189',
+   # 'API_SECRET': 'Eczo8yPNWhhUpPDDfOIaxewz8UE'
+#}
 
 ROOT_URLCONF = 'art_recommendation_system.urls'
 
@@ -160,7 +160,7 @@ STATICFILES_DIRS=[
 
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Adjust path if necessary
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
