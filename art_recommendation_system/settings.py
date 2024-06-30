@@ -40,9 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
     'gallery_app',
-    
     'corsheaders',
     'rest_framework',
 ]
@@ -65,7 +63,12 @@ MIDDLEWARE = [
   #  'API_KEY': '196239594764189',
    # 'API_SECRET': 'Eczo8yPNWhhUpPDDfOIaxewz8UE'
 #}
+CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
 ROOT_URLCONF = 'art_recommendation_system.urls'
 
 TEMPLATES = [
