@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'gallery_app',
     'corsheaders',
     'rest_framework',
+    'user_app',
 ]
 
 MIDDLEWARE = [
